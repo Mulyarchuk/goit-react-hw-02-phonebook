@@ -54,7 +54,7 @@ render(){
         flexDirection: `column`,
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
+        fontSize: 24,
         color: '#010101'
       }}
     >

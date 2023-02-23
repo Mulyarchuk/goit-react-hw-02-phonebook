@@ -36,8 +36,9 @@ export class ContactForm extends React.Component{
         const {name, number} =this.state; 
         return (
         <form className={css.contact__form}onSubmit={this.handleSubmit}>
-        <label >
+        <label className={css.contact__label}>
           Name <input
+          className={css.contact__input}
           type="text"
           name="name"
           value={name}
@@ -47,7 +48,9 @@ export class ContactForm extends React.Component{
           required
           />
         </label>
+        <label className={css.contact__label}>
         Number <input
+        className={css.contact__input}
         type="tel"
         name="number"
         value={number}
@@ -55,8 +58,9 @@ export class ContactForm extends React.Component{
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
-/>
-        <button type="submit">Add contact</button>
+        />
+        </label>
+        <button type="submit" className={css.contact__button}>Add contact</button>
       </form>)
       }
       
