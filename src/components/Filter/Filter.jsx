@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Filter = ({data, changeFilter})=>{
+export const Filter = ({value, onChange})=>{
     return (
         <label>Find contacts by name
-        <input type="text" value={data} onChange={changeFilter} />
+        <input type="text"
+        value={value}
+        onChange={onChange} />
     </label>
     )
     
