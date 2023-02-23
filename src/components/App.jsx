@@ -35,13 +35,18 @@ changeFilter = e => {
   this.setState({ filter: e.currentTarget.value });
 };
 
-filterContacts = (contacts, filter) => {
-  return contacts.filter(contact => contact.name.toLowerCase().includes(filter.trim().toLowerCase()))
-}
+getVisibleContacts = () => {
+  const { filter, contacts } = this.state;
+  const normalizedFilter = filter.toLowerCase();
+
+  return contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter)
+  );
+};
+
 
 render(){
-  const { contacts, filter } = this.state;
-    const filtered = this.filterContacts(contacts, filter);
+  
   return (
     <div
       style={{
@@ -57,7 +62,7 @@ render(){
       <ContactForm  addContact={this.addContact}/>
       <h2>Contacts</h2>
       <Filter value={this.state.filter} onChange={this.changeFilter}/>
-      <ContactList contacts={filtered} deleteContact={this.deleteContact} />
+      <ContactList getVisibleContacts={this.getVisibleContacts} deleteContact={this.deleteContact} />
     </div>
   );
     };
