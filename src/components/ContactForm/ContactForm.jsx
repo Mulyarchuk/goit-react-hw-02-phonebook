@@ -4,7 +4,6 @@ import css from './ContactForm.module.css';
 
 export class ContactForm extends React.Component{
     state = {
-        contacts: [],
         name: '',
         number: ``,
         
@@ -65,3 +64,4 @@ export class ContactForm extends React.Component{
       }
       
 }
+
